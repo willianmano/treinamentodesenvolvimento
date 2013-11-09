@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Tarefa 1</title>
+
+	<link rel="stylesheet" type="text/css" href="">
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			width: 800px;
+			margin: 0 auto;
+		}
+		#topo {
+			background-color: green;
+		}
+		#esquerda , #direita, #conteudo {
+			height: 600px;
+		}
+		#esquerda {
+			background-color: red;
+			width: 200px;
+			float: left;
+		}
+		#direita {
+			background-color: yellow;
+			width: 200px;
+			float: right;
+		}
+		#conteudo {
+			overflow: hidden;
+			background-color: blue;
+		}
+		button {
+			min-width: 100px;
+			height: 40px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="topo">
+		<h1>Topo da página</h1>
+	</div>
+
+	<div id="esquerda">
+		<p>menu esquerda</p>
+	</div>
+
+	<div id="direita">
+		<p>menu direita</p>
+	</div>
+
+	<div id="conteudo">
+		<p>conteudo da pagina</p>
+
+		<p class="subitem">conteudo da pagina</p>
+
+		<p>conteudo da pagina</p>
+
+		<button onclick="desativarBotoes(this);" id="btn1">Botão 1</button>
+		
+		<button onclick="desativarBotoes(this);" id="btn2">Botão 2</button>
+
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		<button onclick="desativarBotao(this);"> Botão </button>
+		
+		<button onclick="toggleColunas();" id="btn3">Desativar Colunas</button>
+
+	</div>
+
+	<script type="text/javascript">
+		function desativarBotao(button)
+		{
+			button.setAttribute('disabled', 'disabled');
+		}
+		function desativarBotoes(btn)
+		{
+			if( btn.id == 'btn1' ) {
+				btn.setAttribute('disabled', 'disabled');
+				document.getElementById('btn2').removeAttribute('disabled');
+			} else {
+				btn.setAttribute('disabled', 'disabled');
+				document.getElementById('btn1').removeAttribute('disabled');
+			}
+		}
+
+		function toggleColunas()
+		{
+			var esquerda = document.getElementById('esquerda');
+			var direita = document.getElementById('direita');
+
+			if( esquerda.style.display == 'none' ) {
+				esquerda.style.display = 'block';
+				direita.style.display = 'block';
+			} else {
+				esquerda.style.display = 'none';
+				direita.style.display = 'none';
+			}
+			
+		}
+	</script>
+</body>
+</html>
