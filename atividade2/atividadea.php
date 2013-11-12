@@ -1,13 +1,13 @@
 <?php
 
-$countriesA = array('US', 'EN', 'BR', 'PT');
-$countriesB = array('GB', 'PT', 'BR');
+$countriesA = array('US', 'BR', 'PT', 'EN');
+$countriesB = array('PT', 'GB', 'BR');
 
 for ($i=0; $i < sizeof($countriesA); $i++) { 
 	for ($j=0; $j < sizeof($countriesB); $j++) { 
 		if ($countriesA[$i] == $countriesB[$j] ) {
 			$print = false;
-			break 2;
+			continue 2;
 		}
 	}
 	echo $countriesA[$i] . "<br />";
@@ -17,7 +17,7 @@ for ($i=0; $i < sizeof($countriesA); $i++) {
 for ($i=0; $i < sizeof($countriesB); $i++) { 
 	for ($j=0; $j < sizeof($countriesA); $j++) { 
 		if ($countriesB[$i] == $countriesA[$j] ) {
-			break 2;
+			continue 2;
 		}
 	}
 	$countriesA[] = $countriesB[$i];
